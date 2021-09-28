@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product</title>
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="ml-3">
+<h1>Register</h1>
+<form class="form-group" method="POST" th:action="@{/register}" id="registerForm">
+    <label >Username: </label>
+    <input class="form-control" type="text"  name="username"/><br/>
+    <label>Password: </label>
+    <input class="form-control" type="password" name="password"/><br/>
+    <label>Confirm password: </label>
+    <input class="form-control" type="password" name="confirm"/><br/>
+    <label>Full name: </label>
+    <input class="form-control" type="text" name="fullName"/><br/>
+    <label >Phone Number: </label>
+    <input class="form-control" type="text" name="phoneNumber"/><br/>
+    <input class="btn btn-primary" type="submit" value="Register"/>
+</form>
+</div>
+</body>
+</html>

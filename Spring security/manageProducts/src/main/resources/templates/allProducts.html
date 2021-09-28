@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All products</title>
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<body>
+<h1>All Products</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Description</td>
+        </tr>
+
+    </thead>
+    <tbody>
+       <tr th:each="prd, iStat : ${products}">
+           <td th:text="${iStat.count}"></td>
+           <td th:text="${prd.name}"></td>
+           <td th:text="${prd.price}"></td>
+           <td th:text="${prd.quantity}"></td>
+           <td th:text="${prd.description}"></td>
+       </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

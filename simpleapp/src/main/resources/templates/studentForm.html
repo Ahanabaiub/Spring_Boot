@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+</head>
+<body>
+<div align=""center>
+    <p>Student Creation form</p>
+    <form method="post" th:action="@{/student}" th:object="${student}">
+        <p>Name : <input type="text" name="name"></p>
+        <p>Id : <input type="text" th:field="*{id}"></p>
+        <p>Courses : </p> <input type="checkbox" th:field="*{courses}" th:value="Ph1"> <span th:text="Physics"></span>
+        <input type="checkbox" th:field="*{courses}" th:value="chm"> <span th:text="Chemistry"></span>
+        <input type="checkbox" th:field="*{courses}" th:value="mth"> <span th:text="math"></span>
+        <p>Books :</p>
+        <th:block th:each="book : ${books}">
+            <input type="checkbox" name="books" th:value="${book}"><span th:text="${book.title}"></span>
+        </th:block>
+        <br>
+        <input type="submit" name="Submit">
+    </form>
+</div>
+
+</body>
+</html>
