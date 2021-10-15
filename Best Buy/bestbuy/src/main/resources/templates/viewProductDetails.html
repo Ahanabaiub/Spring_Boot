@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/includes/fragments :: header" />
+
+<body>
+
+
+<div th:replace="/includes/fragments :: navbar"></div>
+<div th:replace="/includes/fragments :: sidebar"></div>
+
+<div class="main">
+   <h1><span th:text="${product.name}"></span></h1>
+    <table class="table">
+        <tr>
+            <td>Price :</td>
+            <td><span th:text="${product.price}"></span></td>
+        </tr>
+        <tr>
+            <td>Regular Price :</td>
+            <td><span th:text="${product.regularPrice}"></span></td>
+        </tr>
+        <tr>
+            <td>Status :</td>
+            <td><span th:text="${product.status}"></span></td>
+        </tr>
+        <tr>
+            <td>Product Code :</td>
+            <td><span th:text="${product.productCode}"></span></td>
+        </tr>
+        <tr>
+            <td>Brand :</td>
+            <td><span th:text="${product.brand.name}"></span></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Specifications</h2>
+    <br>
+    <table class="table">
+        <th:block th:each="specification : ${specifications}">
+            <tr><td colspan="2"><b><span th:text="${specification.name}"></span></b></td></tr>
+            <tr th:each="spd : ${product.specificatioDetails}" th:if="${spd.specification.id == specification.id}">
+                <td><span th:text="${spd.title}"></span></td>
+                <td><span th:text="${spd.details}"></span></td>
+            </tr>
+        </th:block>
+    </table>
+    <br>
+    <h2>Description</h2>
+    <p th:text="${product.description}"></p>
+</div>
+
+
+<script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+</body>
+</html>

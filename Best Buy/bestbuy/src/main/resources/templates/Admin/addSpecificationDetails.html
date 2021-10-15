@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/includes/fragments :: header" />
+
+<body>
+
+
+<div th:replace="/includes/fragments :: navbar"></div>
+<div th:replace="/includes/fragments :: sidebar"></div>
+
+
+<div class="main">
+    <h2>Admin home</h2>
+    <div class="container">
+
+        <form th:action="@{/admin/savespecification}" method="post" th:object="${specificationDetails}" class="form-control mx-auto" style="width: 550px">
+            <h3>Product Specification</h3>
+            <div class="form-group">
+                <select class="form-control"  name="product">
+                    <option value=""  disabled th:selected="true">
+                        --Product--
+                    </option>
+                    <th:block th:each="sp : ${products}">
+                        <option th:value="${sp.id}" th:text="${sp.name}"></option>
+                    </th:block>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control"  name="specification">
+                    <option value=""  disabled th:selected="true">
+                        --Specification Type--
+                    </option>
+                    <th:block th:each="sp : ${specifications}">
+                        <option th:value="${sp.id}" th:text="${sp.name}"></option>
+                    </th:block>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <input type="text" th:field="*{title}" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea  th:field="*{details}" class="form-control"> </textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+
+
+
+
+    //............
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+</body>
+</html>

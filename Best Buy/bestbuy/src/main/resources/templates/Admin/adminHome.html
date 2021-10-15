@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/includes/fragments :: header" />
+
+<body>
+
+
+<div th:replace="/includes/fragments :: navbar"></div>
+<div th:replace="/includes/fragments :: sidebar"></div>
+
+
+<div class="main">
+    <h2>Admin home</h2>
+    <div class="container">
+        <a href="/admin/addproduct" class="btn btn-info">Add Product</a>
+        <a href="/admin/addcategory" class="btn btn-info">Add Category</a>
+        <a href="/admin/addsubcategory" class="btn btn-info">Add SubCategory</a>
+        <a href="/admin/addsubsubcategory" class="btn btn-info">Add SubSubCategory</a><br>
+        <a href="/admin/addspecification" class="btn btn-info">Add Specification Details</a>
+    </div>
+</div>
+
+<script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+</body>
+</html>
