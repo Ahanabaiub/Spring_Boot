@@ -7,6 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
 
 @Controller
 @RequestMapping("/admin")
@@ -60,13 +65,40 @@ public class AdminController {
     }
 
     @PostMapping("/save")
-    public String saveProduct(@ModelAttribute("product") Product product){
-        System.out.println(product);
+    public String saveProduct(@ModelAttribute("product") Product product,
+                              @RequestParam("file")MultipartFile file){
+
+
+        if(!file.isEmpty()){
+            //System.out.println(file.getOriginalFilename());
+            try {
+                file.transferTo(new File(System.getProperty("user.dir")+
+                        "\\src\\main\\resources\\static\\uploads\\pImages\\"+product.getProductCode()+".jpg"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            product.setImage(product.getProductCode()+".jpg");
+            //System.out.println("current: "+System.getProperty("user.dir"));
+
+        }
+
+
+        //System.out.println(product);
         productService.save(product);
         return "redirect:";
 
         //System.out.println(specificatioDetails.getTitle()+" "+specificatioDetails.getDetails());
         //return product;
+    }
+
+    @GetMapping("/delete-product/{id}")
+    public String deleteProduct(@PathVariable("id")Long id){
+
+        productService.delete(id);
+
+        return "redirect:/admin";
+
     }
 
 

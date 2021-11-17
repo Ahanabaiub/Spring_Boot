@@ -16,7 +16,7 @@ public class Specification implements Comparable<Specification> {
 
 
     @OneToMany(mappedBy = "specification")
-    @JsonBackReference
+    @JsonBackReference(value = "spc-sd")
     private List<SpecificatioDetails> specificatioDetails;
 
     public Specification() {
@@ -69,7 +69,6 @@ public class Specification implements Comparable<Specification> {
         return "Specification{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", specificatioDetails=" + specificatioDetails +
                 '}';
     }
 

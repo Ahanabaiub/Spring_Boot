@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d52e1e91-86cf-4e00-b08b-d3679edc08af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/SpecificatioDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/SpecificatioDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/Specification.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/Specification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/SubCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/models/SubCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/java/com/javacode/bestbuy/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/resources/templates/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/resources/templates/homePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbuy/src/main/resources/templates/viewProducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/bestbuy/src/main/resources/templates/viewProducts.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="20jwsclF9D4N4zLZDy5ulN9AtfR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d52e1e91-86cf-4e00-b08b-d3679edc08af" name="Default Changelist" comment="" />
+      <created>1636571512511</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636571512511</updated>
+      <workItem from="1636571516230" duration="219000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

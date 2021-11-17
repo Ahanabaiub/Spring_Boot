@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/includes/fragments :: header" />
+
+<body>
+
+
+<div th:replace="/includes/fragments :: navbar"></div>
+<div th:replace="/includes/fragments :: sidebar"></div>
+
+<div class="main">
+<!--    <div class="row">-->
+<!--        <div class="col" th:each="product : ${productDtos}">-->
+<!--            <div class="card mb-4" style="width: 15rem; height: 17rem">-->
+<!--                &lt;!&ndash;                   <img class="card-img-top" src="..." alt="Card image cap">&ndash;&gt;-->
+<!--                <div class="card-body">-->
+<!--                    <a th:href="@{/product/details/{id}(id=${product.id})  }"> <h5 class="card-title" th:text="${product.name}">Name</h5></a>-->
+<!--                    &lt;!&ndash;                       <p class="card-text" th:text="${product.description}">Some quick example </p>&ndash;&gt;-->
+<!--                    <p class="card-text" th:text="${product.price} + ' TK'"></p>-->
+<!--                    <a th:href="@{/cart/product/{id}(id=${product.id})  }" class="btn btn-primary">Add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div th:if="${!productDtos.isEmpty()}">
+        <table class="table" >
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sub Total</th>
+            </tr>
+
+            <tr th:each="product : ${productDtos}">
+                <td><a th:href="@{/product/details/{id}(id=${product.id})  }" th:text="${product.name}">Product Name</a></td>
+                <td><span th:text="${product.quantity}">quantity</span></td>
+                <td><span th:text="${product.price}">price</span></td>
+                <td><span th:text="${product.quantity * product.price}">Sub total</span></td>
+            </tr>
+        </table>
+
+    </div>
+    <div th:if="${productDtos.isEmpty()}">
+        <h2>No Items in Cart.</h2>
+    </div>
+</div>
+
+
+<script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+</body>
+</html>

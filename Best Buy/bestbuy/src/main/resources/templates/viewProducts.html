@@ -12,13 +12,14 @@
    <div class="main">
        <div class="row">
            <div class="col" th:each="product : ${products}">
-               <div class="card mb-4" style="width: 15rem; height: 17rem">
-<!--                   <img class="card-img-top" src="..." alt="Card image cap">-->
+               <div class="card mb-4" style="width: 15rem; height: 27rem">
+
+                   <img th:if="${product.image!=null}" style="height: 175px; width: 210px" class="card-img-top" th:src="@{${'/uploads/pImages/'+product.image}}" alt="Card image">
                    <div class="card-body">
                       <a th:href="@{/product/details/{id}(id=${product.id})  }"> <h5 class="card-title" th:text="${product.name}">Name</h5></a>
 <!--                       <p class="card-text" th:text="${product.description}">Some quick example </p>-->
                        <p class="card-text" th:text="${product.price} + ' TK'"></p>
-                       <a href="#" class="btn btn-primary">Add to cart</a>
+                       <a th:href="@{/cart/product/{id}(id=${product.id})  }" class="btn btn-primary">Add to cart</a>
                    </div>
                </div>
            </div>

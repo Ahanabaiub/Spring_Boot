@@ -15,11 +15,10 @@ public class SpecificatioDetails {
     private String details;
 
     @ManyToOne
-    @JsonManagedReference
     private Specification specification;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "product-sd")
     private Product product;
 
     public SpecificatioDetails() {

@@ -1,5 +1,6 @@
 package com.javacode.bestbuy.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -21,7 +22,6 @@ public class Product {
     private String image;
 
     @ManyToOne
-    @JsonManagedReference
     private Brand brand;
 
     @ManyToOne
@@ -33,8 +33,7 @@ public class Product {
     @ManyToOne
     private SubSubCategory subSubCategory;
 
-    @OneToMany(mappedBy = "product")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<SpecificatioDetails> specificatioDetails;
 
     public Product() {

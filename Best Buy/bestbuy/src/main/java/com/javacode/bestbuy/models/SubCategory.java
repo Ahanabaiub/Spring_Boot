@@ -14,11 +14,10 @@ public class SubCategory {
     private String name;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "cat-subcat")
     private Category category;
 
     @OneToMany(mappedBy = "subCategory")
-    @JsonManagedReference
     private List<SubSubCategory> subSubCategoryList;
 
     public SubCategory() {

@@ -35,16 +35,19 @@ public class ProductController {
     @Autowired
     private SpecificationDetailsService specificationDetailsService;
 
-    @GetMapping("/getall")
-    @ResponseBody
-    public List<Product> getAll(){
+    @GetMapping
+    public String getAll(Model model){
         List<Product> products =  productService.findAll();
+
+        model.addAttribute("products",products);
+        model.addAttribute("categories",catagoryService.getall());
+        model.addAttribute("subCategories",subCatService.getAll());
 
 //        for(Product p : products){
 //            System.out.println(p);
 //        }
 
-        return products;
+        return "viewProducts";
     }
 
     @GetMapping("/{catid}/{subcatid}")

@@ -13,7 +13,7 @@ public class SubSubCategory {
     private String name;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "subcat-subsub")
     private SubCategory subCategory;
 
 
